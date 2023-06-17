@@ -20,7 +20,7 @@ function InputComponent() {
   return (
     <div>
       <input type="text" value={input} onChange={handleInputChange} />
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit}>Submeter</button>
     </div>
   );
 }
