@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import InputComponent from './InputComponent'; // Importação do novo componente
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <InputComponent /> {/* Uso do novo componente */}
         <a
           className="App-link"
           href="https://reactjs.org"
