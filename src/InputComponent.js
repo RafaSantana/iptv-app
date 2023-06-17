@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { M3U } from 'playlist-parser'; // Importando o parser M3U
 
 function InputComponent() {
   const [input, setInput] = useState('');
@@ -11,7 +12,8 @@ function InputComponent() {
   const handleSubmit = async () => {
     try {
       const response = await axios.get(input);
-      console.log(response.data);
+      const playlist = M3U.parse(response.data); // Analisando a resposta como um arquivo M3U
+      console.log(playlist); // Imprimindo a playlist no console
     } catch (error) {
       console.error(error);
     }
@@ -20,7 +22,7 @@ function InputComponent() {
   return (
     <div>
       <input type="text" value={input} onChange={handleInputChange} />
-      <button onClick={handleSubmit}>Submeter</button>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 }
